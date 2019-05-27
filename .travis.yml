@@ -7,4 +7,4 @@ before_install:
   - docker build -t scottenriquez/docker-production-flow -f Dockerfile.dev .
 
 script:
-  - docker run scottenriquez/docker-production-flow npm run test -- --coverage
+  - docker run -v /app/node_modules -v $(pwd):/app scottenriquez/docker-production-flow npm run test -- --coverage

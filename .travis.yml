@@ -3,6 +3,7 @@ services:
   - docker
 
 before_install:
+  - cd frontend
   - docker build -t scottenriquez/docker-production-flow -f Dockerfile.dev .
 
 script:
